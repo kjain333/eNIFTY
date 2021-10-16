@@ -1,0 +1,6 @@
+[submodule "eNIFTY-API"]
+	path = eNIFTY-API
+	url = https://github.com/venkateshSV/eNIFTY-API.git
+[submodule "eNIFTY-App"]
+	path = eNIFTY-App
+	url = https://github.com/kjain333/eNIFTY-App.git
