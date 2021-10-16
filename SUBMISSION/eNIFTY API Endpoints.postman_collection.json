@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "d6623131-c5d5-4ce7-9e86-3fb3df3e05c6",
+		"name": "eNIFTY API Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserSignup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"User\",\n    \"password\":\"pass1234\",\n    \"email\":\"user@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerId\":\"3b86579a-aa87-4651-92a0-524138ab1a97\",\n    \"password\":\"pass1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"playerId\":\"3b86579a-aa87-4651-92a0-524138ab1a97\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditUserDetails",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerId\":\"3b86579a-aa87-4651-92a0-524138ab1a97\",\n    \"props\":{\n        \"name\":\"UsernameChanged\",    \n        \"premium\": \"False\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/mutate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"mutate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPlayerId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"uniqueId\":\"user@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/get-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"get-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateNFT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"TEMP1\",\n    \"cap\":\"100\",\n    \"type\":\"NFT\",\n    \"immutable\": {\n        \"tags\": [\n    {\n      \"name\": \"Digital Art\",\n      \"property\": \"Category\"\n    },\n    {\n      \"name\": \"Romantic\",\n      \"property\": \"Personality\"\n    },\n    {\n      \"name\": \"Lawyer\",\n      \"property\": \"Profession\"\n    },\n    {\n      \"name\": \"Female\",\n      \"property\": \"Gender\"\n    },\n    {\n      \"name\": \"Teenager\",\n      \"property\": \"Age Group\"\n    },\n    {\n      \"name\": \"Black\",\n      \"property\": \"Color\"\n    },\n    {\n      \"name\": \"Light\",\n      \"property\": \"Theme\"\n    },\n    {\n      \"name\": \"Stamina Boost\",\n      \"property\": \"Boost\"\n    },\n    {\n      \"name\": \"Concentration Boost\",\n      \"property\": \"Boost\"\n    },\n    {\n      \"name\": \"Skill Boost\",\n      \"property\": \"Boost\"\n    }\n\n  ]\n\n    },\n    \"mutable\": {\n        \"image\": \"https://static8.depositphotos.com/1000448/862/v/600/depositphotos_8627182-stock-illustration-shield-symbol.jpg\",\n        \"description\": \"This item stops some damage\",\n        \"pricehistory\":[1,2,1,3,1,2,2,1,3,10],\n        \"buyBID\":20,\n        \"sellBID\":20,\n        \"loanBID\":40,\n        \"owners\":[\n            {\n                \"name\":\"Karan\",\n                \"percentage\":\"20\"\n            },\n            {\n                \"name\":\"Venkatesh\",\n                \"percentage\":\"40\"\n            },\n            {\n                \"name\":\"Kshitij\",\n                \"percentage\":\"20\"\n            },\n            {\n                \"name\":\"Shikshanshu\",\n                \"percentage\":\"20\"\n            }\n        ],\n        \"engagement\":\"40\"\n    }\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/template/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"template",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditNFT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateId\":7971,\n    \"props\":{\n        \"buyBID\":30,\n        \"engagement\":45\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/template/mutate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"template",
+						"mutate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteNFT",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateId\":7881\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/template/remove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"template",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNFTdetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateId\":7971\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/template/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"template",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MintToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerId\": \"3b86579a-aa87-4651-92a0-524138ab1a97\",\n    \"templateId\":7971,\n    \"amount\":\"1\",\n    \"mutable\":\n    {\n        \"expensive\":\"yes\"\n    },\n    \"immutable\":\n    {\n        \"antiquated\": \"no\"\n    }\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/token/mint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"mint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTokenDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tokenId\": \"11662\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/token/mint/get-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"mint",
+						"get-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerId\":\"a8e9b64b-38ec-49f0-a02f-8428024bce3e\",\n    \"tokenId\":11291,\n    \"amount\":\"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/token/burn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"burn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditToken",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tokenId\": 11662,\n    \"props\": \n    {\n        \"condition\": \"damaged\"\n    } \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/token/mutate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"mutate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransferToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromPlayerId\": \"a8e9b64b-38ec-49f0-a02f-8428024bce3e\",\n    \"toPlayerId\":   \"3b86579a-aa87-4651-92a0-524138ab1a97\",\n    \"tokenObjects\": [\n    {\n        \"tokenId\": 11208,\n        \"amount\": \"1\"\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/token/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTokenAssociatedWithTemplate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"templateId\":7971\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/token/get-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token",
+						"get-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserInventory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerId\":\"3b86579a-aa87-4651-92a0-524138ab1a97\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/get-inventory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"get-inventory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
